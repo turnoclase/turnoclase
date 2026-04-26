@@ -28,6 +28,7 @@ en caso de conflicto.
 | `web/`      | Sitio web estático (página principal + privacidad)    | Jekyll, Firebase Hosting                 |
 | `android/`  | Apps alumno y profesor para Android                   | Kotlin, Jetpack Compose, Material 3      |
 | `ios/`      | Apps alumno y profesor para iOS                       | Swift, SwiftUI, MVVM                     |
+| `vue/`      | Apps web alumno y profesor (futuras versiones web)    | Vue 3, TypeScript, Vite, Pinia           |
 | `shared/`   | Recursos gráficos y diagramas compartidos             | Solo assets, sin código ejecutable       |
 | `private/`  | Credenciales, certificados y material sensible        | ⚠️ Solo lectura — ver advertencia abajo  |
 
