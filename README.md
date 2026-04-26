@@ -1,17 +1,4 @@
-# turnoclase
+# TurnoClase
 
-```
- ________________________________________
-/ What is tolerance? -- it is the        \
-| consequence of humanity. We are all    |
-| formed of frailty and error; let us    |
-| pardon reciprocally each other's folly |
-| -- that is the first law of nature. -  |
-\ Voltaire                               /
- ----------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-```
+TurnoClase facilita a los profesores organizar la resolución de preguntas durante una clase permitiendo que los alumnos
+pidan su turno y sean atendidos de uno en uno.
