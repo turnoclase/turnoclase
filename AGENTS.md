@@ -17,13 +17,33 @@ El trabajo real se encuentra en subdirectorios, cada uno de los cuales es un **r
 una decisión de diseño del proyecto.
 
 Cada subdirectorio puede contener además su propio fichero AGENTS.md con instrucciones para agentes, que todos los
-agentes deberán leer y seguir. Las instrucciones de un subdirectorio tienen precedencia sobre las del este AGENTS.md en
-caso de conflicto.
+agentes deberán leer y seguir. Las instrucciones de un subdirectorio tienen **precedencia** sobre las de este AGENTS.md
+en caso de conflicto.
+
+### Sub-repositorios
+
+| Directorio  | Descripción                                           | Stack principal                          |
+|-------------|-------------------------------------------------------|------------------------------------------|
+| `backend/`  | Firebase Cloud Functions (API)                        | Node.js 22, Firestore, Hashids           |
+| `web/`      | Sitio web estático (página principal + privacidad)    | Jekyll, Firebase Hosting                 |
+| `android/`  | Apps alumno y profesor para Android                   | Kotlin, Jetpack Compose, Material 3      |
+| `ios/`      | Apps alumno y profesor para iOS                       | Swift, SwiftUI, MVVM                     |
+| `shared/`   | Recursos gráficos y diagramas compartidos             | Solo assets, sin código ejecutable       |
+| `private/`  | Credenciales, certificados y material sensible        | ⚠️ Solo lectura — ver advertencia abajo  |
+
+### Infraestructura común
+
+- **Firebase** es la plataforma de backend para todas las apps: Auth, Firestore, App Check, Cloud Functions y Hosting.
+- **Proyecto Firebase de producción:** `turnoclase-eu` (región `europe-west1`).
+- Los entornos locales de `backend/` y `web/` están dockerizados; usar `make` para las tareas habituales.
 
 ## Instrucciones para agentes
 
 - **No crear commits en este repositorio raíz** salvo para modificar `README.md` o `AGENTS.md`.
 - Para trabajar en el código, entrar en el subdirectorio correspondiente y operar sobre su repositorio Git propio.
+- **Leer siempre el AGENTS.md del subdirectorio** antes de empezar a trabajar en él.
+- **No leer ni exponer el contenido** de ningún fichero del repositorio `private/` (credenciales, certificados,
+  keystores, etc.). Tratar todos sus ficheros como de solo lectura y usarlos exclusivamente por su ruta.
 
 ## Convenciones de commits
 
@@ -44,6 +64,9 @@ Usar [Conventional Commits](https://www.conventionalcommits.org/):
 ```
 <tipo>(<scope>): <descripción breve en imperativo>
 ```
+
+- **El mensaje debe escribirse en español.**
+- Ejemplos de tipos: `feat`, `fix`, `docs`, `refactor`, `chore`.
 
 ### Trailer obligatorio
 
